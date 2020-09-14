@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Employee: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>Email</td>
+				<td>Address</td>
+				<td>Phone</td>
+				<td>Website</td>
+				<td>Company Name</td>
+			</tr>
+		</thead>
+		<tr th:each="employee: ${employees}">
+			<td th:text="${employee.id}" />
+			<td th:text="${employee.name}" />
+			<td th:text="${employee.email}" />
+			<td th:text="${employee.address.street}" />
+			<td th:text="${employee.phone}" />
+			<td th:text="${employee.website}" />
+			<td th:text="${employee.company.name}" />
+		</tr>
+	</table>
+</body>
+</html>
