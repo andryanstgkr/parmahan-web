@@ -2,26 +2,28 @@ package com.parmahan.web.model;
 
 import java.io.Serializable;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
-public class User implements Serializable {
+
+@Getter
+@Setter
+public class User extends Base implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Getter @Setter
-	private String id;
 
-	@Getter @Setter
-	private String userId;
+	private String firstName;
 
-	@Getter @Setter
-	private String title;
+	private String lastName;
 
-	@Getter @Setter
-	private String completed;
+	private String userName;
+
+	private String email;
+
+	private String password;
+
+	private boolean active;
 }

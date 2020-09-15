@@ -5,6 +5,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'Hello, ' + ${user} + '!'" />
+    <table border="1">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+		<tr th:each="user: ${users}">
+			<td> <a th:href="@{'/user/'+${user.id}}" th:text="${user.firstName + ' ' + user.lastName}" ></a></td>
+			<td th:text="${user.userName}" />
+			<td th:text="${user.email}" />
+		</tr>
+	</table>
 </body>
 </html>

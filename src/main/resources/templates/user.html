@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table border="1">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+		<tr>
+			<td th:text="${user.firstName + ' ' + user.lastName}" />
+			<td th:text="${user.userName}" />
+			<td th:text="${user.email}" />
+		</tr>
+	</table>
+	<a th:href="@{/users}">Back to User List</a>
+</body>
+</html>
