@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="Parmahan +':'+ ${pageTitle}"></title>
+</head>
+<body>
+	<header th:insert="greeting.html :: header"> </header>
+	<div th:insert="${content}+.html :: body"></div>
+	<footer th:insert="greeting.html :: footer"></footer>
+</body>
+</html>
