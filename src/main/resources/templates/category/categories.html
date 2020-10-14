@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table border="1">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Action</td>
+			</tr>
+		</thead>
+		<tr th:each="category: ${categories}">
+			<td th:text="${category.name}" />
+			<td> <a th:href="@{'/category/edit/'+${category.id}}" th:text="Edit" ></a></td>
+		</tr>
+		
+	</table>
+	<a th:href="@{/category/add}">Add New Category</a>
+</body>
+</html>

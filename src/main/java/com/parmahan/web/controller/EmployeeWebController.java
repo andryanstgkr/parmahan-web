@@ -26,7 +26,8 @@ public class EmployeeWebController {
 
 	@RequestMapping("/employees")
 	public String getAllEmployees(Model model) {
-		ResponseEntity<List<Employee>> responseEntity  = restTemplate.exchange(URL + "/users/", HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {});
+		ResponseEntity<List<Employee>> responseEntity  = restTemplate.exchange(URL + "/employees"
+				+ "/", HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {});
 		List<Employee> employeeList = responseEntity.getBody();
 		for (Employee employee : employeeList) {
 			System.out.println(employee.getId()+". "+employee.getName());
